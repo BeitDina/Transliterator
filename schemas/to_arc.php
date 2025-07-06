@@ -2,11 +2,11 @@
 /**
 *
 * @package Transliterator
-* @version $Id: to_arc.php,v 1.0.2 2023/10/29 15:41:14 orynider Exp $
+* @version $Id: to_arc.php,v 1.0.3 2025/06/06 15:41:14 orynider Exp $
 *
 */
 
-//Acces check ܟ݁ܬ݂ܵܒ݂ܵܐ ܕ݁ܝܠܼܝܕ݂ܘܿܬ݂ܹܗ ܕ݂݁ܝܹܫܘܿܥ ܡܫܼܝܚܵܐ ܒ݂ܸ݁ܪܹܗ ܕ݂݁ܕ݂ܸܘܼܝܕ݂ ܒ݂ܸ݁ܪܹܗ ܕ݁ܲܐܒ݂ܪܵܗܵܡ ܀ 
+//Acces check
 if (!defined('IN_PORTAL') && (strpos($_SERVER['PHP_SELF'], "unit_test.php") <= 0)) { die("Direct acces not allowed! This file was accesed: ".$_SERVER['PHP_SELF']."."); }
 if (defined('TO_ALEPH')) { print('Constant TO_ALEPH defined already: ' . TO_ALEPH); }
 define('TO_SEARCH_PATTERN', "[)bgdhwzxTyklmns(pPcqr$&tˀḥṭˁṗṣšśאבגדהוזחטיכלמנסעפצקרששׁשׂתܐܒܓܕܗܘܙܚܛܝܟܠܡܢܣܥܦܧܨܩܪܫܬ]*");
@@ -62,6 +62,21 @@ define('TO_SHIN_SHIN_DOT_SHEVA_NACH', 'ܫܿ');
 define('TO_SHIN_SHIN_DOT_KAMETZ', 'ܫܿ');
 define('TO_TAV', 'ܬ');
 define('TO_THAV', 'ܬ'); //U+074F
+
+define('TO_END_OF_PARAGRAPH', '܀'); //U+0700 SYRIAC END OF PARAGRAPH
+define('TO_SUPRALINEAR_FULL_STOP', '܁'); //U+0701 SYRIAC SUPRALINEAR FULL STOP
+define('TO_SUBLINEAR_FULL_STOP', '܂'); //U+0702 SYRIAC SUBLINEAR FULL STOP
+define('TO_SUPRALINEAR_COLON', '܃'); //U+0703 SYRIAC SUPRALINEAR COLON
+define('TO_SUBLINEAR_COLON', '܄'); //U+0704 SYRIAC SUBLINEAR COLON
+define('TO_HORIZONTAL_COLON', '܅'); //U+0705 SYRIAC HORIZONTAL COLON
+define('TO_COLON_SKEWED_LEFT', '܆'); //U+0706 SYRIAC COLON SKEWED LEFT
+define('TO_COLON_SKEWED_RIGHT', '܇'); //U+0707 SYRIAC COLON SKEWED RIGHT
+define('TO_SUPRALINEAR_COLON_SKEWED_LEFT', '܈'); //U+0708 SYRIAC SUPRALINEAR COLON SKEWED LEFT
+define('TO_SUBLINEAR_COLON_SKEWED_RIGHT', '܉'); //U+0709 SYRIAC SUBLINEAR COLON SKEWED RIGHT
+define('TO_CONTRACTION', '܊'); //U+070A SYRIAC CONTRACTION
+define('TO_HARKLEAN_OBELUS', '܋'); //U+070B SYRIAC HARKLEAN OBELUS
+define('TO_HARKLEAN_METOBELUS', '܌'); //U+070C SYRIAC HARKLEAN METOBELUS
+define('TO_HARKLEAN_ASTERISCUS', '܍'); //U+070D SYRIAC HARKLEAN ASTERISCUS
 
 define('TO_RUKKAKHA_UP_ZLAMA_ANGULAR', '݂ܹ');
 define('TO_PTHAHA_UP', 'ܰ'); //| U+0730 | Syriac Pthaha Above |
