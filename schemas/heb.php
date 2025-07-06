@@ -2,7 +2,7 @@
 /**
 *
 * @package Transliterator
-* @version $Id: heb.php,v 1.1.1 2023/10/22 21:21:14 orynider Exp $
+* @version $Id: heb.php,v 1.1.2 2025/10/22 19:21:14 orynider Exp $
 *
 */
 
@@ -71,20 +71,20 @@ define('THAV', 'ת');
 	*/
 define('SHEVA', 'ְ'); //SHVA', '\u05B0'
 define('SHEVA_NACH', 'ְ'); //SHVA', '\u05B0'
-define('SHEVA_UNKNOWN', 'ְ');
+define('SHEVA_UNKNOWN', 'ְ'); 
 define('CHATAF_SEGOL', 'ֱ'); //REDUCED_SEGOL', '\u05B1'
 define('CHATAF_PATACH', 'ֲ'); //REDUCED_PATAKH', '\u05B2'
 define('CHATAF_KAMETZ', 'ֳ'); //REDUCED_KAMATZ', '\u05B3'
 define('CHIRIK_MALEI', 'ִ'); //HIRIK', '\u05B4'
 define('CHIRIK_CHASER', 'ִ'); //HIRIK', '\u05B4'
-define('CHIRIK', 'ִ');
-define('CHIRIK_UNKNOWN', 'ֳ');
-define('TZEIREI', 'ֵ');
+define('CHIRIK', 'ִ'); 
+define('CHIRIK_UNKNOWN', 'ֳ'); 
+define('TZEIREI', 'ֵ'); 
 define('TZEIREI_MALEI', 'ֵ'); //TZEIRE', '\u05B5'
 define('TZEIREI_CHASER', 'ֵ'); //TZEIRE', '\u05B5'
-define('TEZEIREI_CHASER', 'ֵ');
-define('TEZEIREI_UNKNOWN', 'ֵ');
-define('TZEIREI_UNKNOWN', 'ֵ');
+define('TEZEIREI_CHASER', 'ֵ'); 
+define('TEZEIREI_UNKNOWN', 'ֵ'); 
+define('TZEIREI_UNKNOWN', 'ֵ'); 
 define('SEGOL', 'ֶ'); //SEGOL', '\u05B6'  
 define('PATACH_GANUV', '׆'); //\u05C6: Hebräisches Satzzeichen Nun Hafucha || 05C6: Hebräisches Interpunktions-Nonne Hafukha
 define('PATACH', 'ַ'); //PATAKH', '\u05B7'; 
@@ -95,11 +95,12 @@ define('CHOLAM', 'ֹֹ');//HOLAM', '\u05B9'
 define('CHOLAM_CHASER', 'ֺ');//For Wav
 define('CHOLAM_UNKNOWN', 'ֺ');//For Wav
 define('HOLAM_HASHER', 'ֹֹ'); //HOLAM HASHER for Wav 
-define('HOLAM_HASHER_VAV', 'וֹ');
-define('HOLAM_RESH', 'רֹ');
+define('HOLAM_HASHER_VAV', 'וֹ'); 
+define('HOLAM_RESH', 'רֹ'); 
 define('CHOLAM_MALEI', 'ֹֹ');//HOLAM', '\u05B9'
 define('HOLAM_MEM', 'מֹ'); //  מֹ מֹ
 define('HOLAM_VAV', 'וֺ'); //
+define('DAGESH_VAV', 'וּ'); //
 define('HOLAM_LAMED', 'לֹ');
 define('HOLAM_BHET', 'בֹ');
 define('HOLAM_TAV', 'תֹּ');
