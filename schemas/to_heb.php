@@ -2,7 +2,7 @@
 /**
 *
 * @package Transliterator
-* @version $Id: to_heb.php,v 1.1.2 2023/10/29 15:42:14 orynider Exp $
+* @version $Id: to_heb.php,v 1.1.3 2025/06/06 18:42:14 orynider Exp $
 *
 */
 
@@ -101,6 +101,7 @@ define('TO_HOLAM_RESH', 'רֹ');
 define('TO_CHOLAM_MALEI', 'ֹֹ');//HOLAM', '\u05B9'
 define('TO_HOLAM_MEM', 'מֹ'); //  מֹ
 define('TO_HOLAM_VAV', 'וֺ'); //
+define('TO_DAGESH_VAV', 'וּ'); //
 define('TO_HOLAM_LAMED', 'לֹ');
 define('TO_HOLAM_BHET', 'בֹ');
 define('TO_HOLAM_TAV', 'תֹּ');
