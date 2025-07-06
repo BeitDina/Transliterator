@@ -2,7 +2,7 @@
 /**
 *
 * @package Transliterator
-* @version $Id: index.php,v 1.77 2023/11/29 15:57:52 orynider Exp $
+* @version $Id: index.php,v 1.78 2025/06/06 20:00:52 orynider Exp $
 *
 */
 
@@ -254,6 +254,7 @@ $mainform .= '<span class="nav"><font size="-1">from</font></span>';
 $mainform .= '<select id="dropdown" name="sourcelang" selected="'.$sourcelang.'">';
 $mainform .= '	<option type="select" value="aramaic"'; if($sourcelang == 'aramaic') { $mainform .= ' selected'; } $mainform .= '>Aramaic</option>';
 $mainform .= '	<option type="select" value="romanian"'; if($sourcelang == 'romanian'){ $mainform .= ' selected'; } $mainform .= '>Romanian</option>';
+$mainform .= '	<option type="select" value="romaniote"'; if($sourcelang == 'romaniote'){ $mainform .= ' selected'; } $mainform .= '>Romaniote</option>';
 $mainform .= '	<option type="select" value="ukrainian"'; if($sourcelang == 'ukrainian'){ $mainform .= ' selected'; } $mainform .= '>Ukrainian</option>';
 $mainform .= '	<option type="select" value="hebrew"'; if($sourcelang == 'hebrew'){ $mainform .= ' selected';} $mainform .= '>Original - Hebrew</option>';
 $mainform .= '</select>';
@@ -267,7 +268,12 @@ $mainform .= '	<option value="ashkenazic"'; if($targetlang == 'ashkenazic'){ $ma
 $mainform .= '	<option value="sefardic"'; if($targetlang == 'sefardic'){ $mainform .= ' selected'; } $mainform .= '>Sefardic</option>';
 $mainform .= '	<option value="romaniote"'; if($targetlang == 'romaniote'){ $mainform .= ' selected'; } $mainform .= '>Romaniote</option>';
 $mainform .= '	<option value="romanian"'; if($targetlang == 'romanian'){ $mainform .= ' selected'; } $mainform .= '>Romanian</option>';
-$mainform .= '	<option value="aramaic"'; if($targetlang == 'aramaic') { $mainform .= ' selected'; } $mainform .= '>Aramaic</option>';
+$mainform .= '	<option value="hungarian"'; if($targetlang == 'hungarian'){ $mainform .= ' selected'; } $mainform .= '>Hungarian</option>';
+$mainform .= '	<option value="aramaic"'; if($targetlang == 'aramaic') { $mainform .= ' selected'; } $mainform .= '>Aramaic (Classic)</option>';
+$mainform .= '	<option value="qaramaic"'; if($targetlang == 'qaramaic') { $mainform .= ' selected'; } $mainform .= '>Aramaic (Qumran)</option>';
+$mainform .= '	<option value="baramaic"'; if($targetlang == 'baramaic') { $mainform .= ' selected'; } $mainform .= '>Aramaic (Babylon)</option>';
+$mainform .= '	<option value="iaramaic"'; if($targetlang == 'iaramaic') { $mainform .= ' selected'; } $mainform .= '>Aramaic (Imperial)</option>';
+$mainform .= '	<option value="siriac"'; if($targetlang == 'siriac') { $mainform .= ' selected'; } $mainform .= '>Syriac</option>';
 $mainform .= '	<option value="hebrew"'; if($targetlang == 'hebrew'){ $mainform .= ' selected';} $mainform .= '>Hebrew</option>';
 $mainform .= '	<option value="ukrainian"'; if($targetlang == 'ukrainian'){ $mainform .= ' selected'; } $mainform .= '>Ukrainian</option>';
 $mainform .= '	<option value="mc"'; if($targetlang == 'mc'){ $mainform .= ' selected';} $mainform .= '>Michigan - Claremont</option>';
