@@ -1080,7 +1080,7 @@
 	/* Edit this colors for every subsilver-ish ported template */
 	.row1, .bg1	{ background-color: #EFEFEF; } /* .bg1 */
 	.row2, .bg2	{ background-color: #DEE3E7; } /* .bg2 */
-	.row2, .bg3	{ background-color: #D1D7DC; } /* .bg3 */
+	.row3, .bg3	{ background-color: #D1D7DC; } /* .bg3 */
 	.row4, .bg4	{ background-color: #EFEFEF; }
 	.row5, .bg5	{ background-color: #DEE3E7; }
 	.row6, .bg6	{ background-color: #D1D7DC; }
@@ -3221,3 +3221,4 @@
 		font-size: 13px;
 		color: #000020;
 	}
+
