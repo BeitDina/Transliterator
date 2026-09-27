@@ -1984,7 +1984,7 @@ function RomanianTransliteration($t, $from, $to)
 		$t = preg_replace("<".VAV.">", "u", $t);
 		$t = preg_replace("<".ZED.">", "z", $t);
 		$t = preg_replace("<".CHET.">", "ĥ", $t);
-		$t = preg_replace("<".TET.">", "th", $t);
+		$t = preg_replace("<".TET.">", "ṯ", $t);
 		$t = preg_replace("<".YUD_PLURAL.">", "i", $t);
 		$t = preg_replace("< ".YUD.">", " i", $t);
 		$t = preg_replace("<".YUD.SHEVA.">", "iî", $t);
@@ -2081,7 +2081,7 @@ function RomanianTransliteration($t, $from, $to)
 		$t = preg_replace("<".VAV.">", "u", $t);
 		$t = preg_replace("<".ZED.">", "z", $t);
 		$t = preg_replace("<".CHET.">", "ĥ", $t);
-		$t = preg_replace("<".TET.">", "th", $t);
+		$t = preg_replace("<".TET.">", "ṯ", $t);
 		$t = preg_replace("<".YUD_PLURAL.">", "i", $t);
 		$t = preg_replace("< ".YUD.">", " i", $t);
 		$t = preg_replace("<".YUD.SHEVA.">", "iî", $t);
@@ -2499,8 +2499,9 @@ function RomanianTransliteration($t, $from, $to)
 	$t = CleanUpPunctuation($t);
 	return $t;
 }
+
 /**
-*
+* Hungarian Transliteration
 */
 function HungarianTransliteration($t, $from, $to)
 {
@@ -2641,7 +2642,7 @@ function HungarianTransliteration($t, $from, $to)
 		$t = preg_replace("<".CHET.">", "ĥ", $t);
 		$t = preg_replace("<".TET.">", "th", $t);
 		$t = preg_replace("<".YUD_PLURAL.">", "i", $t);
-		$t = preg_replace("< ".YUD.">", "i", $t);
+		$t = preg_replace("< ".YUD.">", " i", $t);
 		$t = preg_replace("<".YUD.SHEVA.">", "iî", $t);
 		$t = preg_replace("<".YUD.">", "y", $t);
 		$t = preg_replace("<".KAF.">", "k", $t);
@@ -3063,8 +3064,8 @@ function HungarianTransliteration($t, $from, $to)
 */
 function HebrewAramaicTransliteration($t, $from, $to)
 {			
-	/* Vowels */
-	if (($from !== 'hebrew') && ($from !== 'aramaic') && (($to === 'hebrew') || ($to === 'siriac') || ($to === 'aramaic')))
+	/* Consonants */
+	if (($from !== 'hebrew') && ($from !== 'aramaic') && (($to === 'hebrew') || ($to === 'siriac') || ($to === 'aramaic') || ($to === 'qaramaic') || ($to === 'baramaic') || ($to === 'iaramaic')))
 	{	
 		$t = preg_replace("<"."e".">", TO_ALEPH, $t);
 		$t = preg_replace("<"."b".">", TO_BET, $t);
@@ -3335,7 +3336,8 @@ function HebrewAramaicTransliteration($t, $from, $to)
 		$t = preg_replace("<"."ū".">", TO_KUBUTZ, $t);
 	}				
 	
-	if (($from !== 'aramaic') && ($from !== 'hebrew') && (($to === 'siriac') || ($to === 'aramaic'))) 
+	/* Vowels */
+	if (($from !== 'aramaic') && ($from !== 'hebrew') && ($to === 'siriac')) 
 	{
 		$t = preg_replace("<"."Eā".">", TO_ALEPH.TO_PTHAHA_DOWN, $t);
 		$t = preg_replace("<"."Eă".">", TO_ALEPH.TO_RBASA_DOTTED, $t);
@@ -3375,8 +3377,51 @@ function HebrewAramaicTransliteration($t, $from, $to)
 		$t = preg_replace("<"."\+".">", TO_BARREKH, $t);		
 		$t = preg_replace("<"."־".">", TO_MAQAF, $t);
 		$t = preg_replace("<ܦܐܪܝܥܕ>", "܀", $t);		
-	}	 
-
+	}	
+	
+	/* Vowels */
+	if (($from !== 'aramaic') && ($from !== 'hebrew') && (($to === 'aramaic') || ($to === 'qaramaic') || ($to === 'baramaic') || ($to === 'iaramaic'))) 
+	{
+		$t = preg_replace("<"."Eā".">", TO_ALEPH.TO_PTHAHA_DOWN, $t);
+		$t = preg_replace("<"."Eă".">", TO_ALEPH.TO_RBASA_DOTTED, $t);
+		$t = preg_replace("<"."hę".">", TO_RUKKAKHA_UP_ZLAMA_ANGULAR, $t);
+		$t = preg_replace("<"."iî".">", TO_YUD.TO_QUSHSHAYA, $t);
+		$t = preg_replace("<"."ä".">", TO_ZQAPHA_DOTTED, $t);
+		$t = preg_replace("<"."ā".">", TO_ZQAPHA_DOTTED, $t);
+		$t = preg_replace("<"."ü".">", TO_PTHAHA_DOTTED, $t);
+		$t = preg_replace("<"."ő".">", TO_RWAHA, $t);
+		$t = preg_replace("<"."ö".">", TO_RWAHA, $t); 		 
+		$t = preg_replace("<"."ù".">", TO_PTHAHA_DOTTED, $t);
+		$t = preg_replace("<"."à".">", TO_ZQAPHA_DOTTED, $t);
+		$t = preg_replace("<"."ē".">", TO_RBASA_DOTTED, $t);
+		$t = preg_replace("<"."ů".">", TO_PTHAHA_DOTTED, $t);
+		$t = preg_replace("<"."é".">", TO_RBASA_DOTTED, $t);
+		$t = preg_replace("<"."ì".">", TO_ZLAMA_DOTTED, $t);
+		$t = preg_replace("<"."ī".">", TO_ZLAMA_DOTTED, $t);	 
+		$t = preg_replace("<"."ý".">", TO_ZLAMA_DOTTED, $t);
+		$t = preg_replace("<"."ó".">", TO_RWAHA, $t);
+		$t = preg_replace("<"."ō".">", TO_RWAHA, $t);
+		$t = preg_replace("<"."y".">", TO_ZLAMA_DOTTED, $t);
+		$t = preg_replace("<"."ą".">", TO_FEMININE_DOT, $t);
+		$t = preg_replace("<"."dâ".">", TO_DALED.TO_QUSHSHAYA, $t);
+		$t = preg_replace("<"."dî".">", TO_DHALED.TO_QUSHSHAYA, $t);
+		$t = preg_replace("<"."mî".">", TO_MEM.TO_QUSHSHAYA, $t);	 
+		$t = preg_replace("<"."qâ".">", TO_KUF.TO_QUSHSHAYA, $t);
+		$t = preg_replace("<"."î".">", TO_QUSHSHAYA, $t);
+		$t = preg_replace("<"."â".">", TO_RUKKAKHA, $t);
+		$t = preg_replace("<"."ă".">", TO_ZQAPHA_DOTTED, $t);
+		$t = preg_replace("<"."å".">", TO_ZQAPHA_DOTTED, $t); 
+		$t = preg_replace("<"."ё".">", TO_RBASA_DOTTED, $t);
+		$t = preg_replace("<"."ū".">", TO_PTHAHA_DOTTED, $t);
+		$t = preg_replace("<"."ę".">", TO_ZLAMA_ANGULAR, $t);		
+		$t = preg_replace("<"."ī".">", TO_ZLAMA_DOTTED, $t);		
+		$t = preg_replace("<"."ё".">", TO_RBASA_DOTTED, $t);		
+		$t = preg_replace("<"."#".">", TO_MUSIC, $t);
+		$t = preg_replace("<"."\+".">", TO_BARREKH, $t);	
+		$t = preg_replace("<"."־".">", TO_MAQAF, $t);
+		$t = preg_replace("<ܦܐܪܝܥܕ>", "܀", $t);		
+	}
+	
 	//	 ܟ݁ܬ݂ܵܒ݂ܵܐ ܕ݁ܝܠܼܝܕ݂ܘܿܬ݂ܹܗ ܕ݂݁ܝܹܫܘܿܥ ܡܫܼܝܚܵܐ ܒ݂ܸ݁ܪܹܗ ܕ݂݁ܕ݂ܸܘܼܝܕ݂ ܒ݂ܸ݁ܪܹܗ ܕ݁ܲܐܒ݂ܪܵܗܵܡ ܀ 
 	if (($from === 'aramaic') && ($to === 'hebrew')) 
 	{
@@ -3789,6 +3834,10 @@ function AcademicSpirantization($t, $f)
 	return $t;
 }
 
+/*
+* Romaniote Transliteration
+*
+*/
 function RomanioteTransliteration($t, $f)
 {	
 	if ($f == 'romanian')
@@ -3952,6 +4001,77 @@ function RomanioteTransliteration($t, $f)
 	$t = CleanUpPunctuation($t);
 	return $t;
 }
+
+
+//HTML
+
+/*
+* Facebook Test
+*
+*/
+function HTMLtoFACEBOOK($t, $f)
+{	
+	if ($f == 'html')
+	{	
+		/** 20160429 HTML To BBCode
+		 credit to https://github.com/yehchge 
+		A passionate frontend developer from India **/
+		$tags = array(
+            '#<strong>(.*?)</strong>#si' => '\\1',   
+            '#<b>(.*?)</b>#si' => '\\1',
+            '#<P>(.*?)</P>#si' => '+ \\1 +',
+            '#<em>(.*?)</em>#si' => '_ \\1_',
+            '#<i>(.*?)</i>#si' => '\\1',
+            '#<u>(.*?)</u>#si' => '\\1̲',
+            '#<ul>(.*?)</ul>#si' => '\\1',
+            '#&nbsp;#si' => ' ',
+            '#<center>(.*?)</center>#si' => '```\\1```',
+            '#<br(.*?)>#si' => chr(13).chr(10),
+			'#<p>(.*?)</p>#si' => chr(13).chr(10).chr(13).chr(10).'\\1',
+          
+            '#<font.*? color="(.*?)".*?>(.*?)</font>#si' => '[color=\\1]\\2[/color]', 
+            '#<img.*? src="(.*?)".*?>#si' => '[img]\\1[/img]',
+           
+            '#<a.*? href="(.*?)".*?>(.*?)</a>#si' => '[url=\\1]\\2[/url]',
+            
+            //'#<code>(.*?)</code>#si' => '[code]\\1[/code]',
+            //'#<iframe style="(.*?)" id="ytplayer" type="text/html" width="534" height="401" src="(.*?)/embed/(.*?)" frameborder="0"/></iframe>#si' => '[youtube]\\3[/youtube]',
+                
+            '#<span.*? style="(.*?)".*?>(.*?)</span>#si' => '[style=\\1]\\2[/style]',
+			//'#<a href="mailto:"(.*?)" title="Email (.*?)">(.*?)</a>#si' => '[email]\\1[/email]',
+			 //'#<img src="(.*?) >#si' => '[img]\\1[/img]',
+		);
+		
+		foreach ($tags as $s => $r) 
+		{
+			$t = preg_replace($s, $r, $t); 
+		}
+		//去除剩於標籤
+		$t = preg_replace("/<([^<>]*)>/", "",$t);
+		
+		
+		$t = preg_replace("<BONDUARY>", "", $t);
+		$t = preg_replace("<PERIOD>", "", $t);
+		$t = preg_replace("<COPPA>", "", $t);
+		$t = preg_replace("<SPACE>", "SPACE", $t);
+		
+		
+		$t = preg_replace("<SPACE>", "space", $t);
+		
+		$t = preg_replace("<space>", "SPACE", $t);
+		
+		//$t = preg_replace("<··>", "·", $t);
+	}
+	
+	ExtractTrup();
+	
+	$t = CleanUpPunctuation($t);
+	
+	return $t;
+}
+//HTML
+
+
 
 function UkrainianTransliteration($t, $from, $to)
 {
@@ -4591,6 +4711,11 @@ function generateNewTransliteration($sourcetext, $targetlang, $sourcelang, $isOp
 	else if ($target == "hebrew")
 	{
 		$t2 = HebrewAramaicTransliteration($t, $f, $target);
+		print $t2;
+	}
+	else if ($target == "facebook")
+	{
+		$t2 = HTMLtoFACEBOOK($t, $f, $target);
 		print $t2;
 	}
 	else if ($target == "aramaic")
